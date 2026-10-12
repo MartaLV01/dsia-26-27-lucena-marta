@@ -112,3 +112,13 @@ El test de integración utiliza el CSV de ventas del curso para verificar los re
 ## Dependencias
 
 Las dependencias del proyecto están documentadas en `requirements.txt`, incluyendo `pytest` y `pytest-cov` para ejecutar y medir los tests.
+
+## Integración continua (CI)
+
+El proyecto utiliza GitHub Actions para ejecutar automáticamente los tests y comprobar que la cobertura de código sea de al menos el 60 %.
+
+Workflow: https://github.com/MartaLV01/dsia-26-27-lucena-marta/actions/workflows/ci.yml
+
+Evidencia de ejecución correcta: https://github.com/MartaLV01/dsia-26-27-lucena-marta/actions/runs/38318143302
+
+El workflow se ejecuta al subir cambios a las ramas main y proyecto1, así como al abrir un Pull Request.
