@@ -24,8 +24,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Unit tests + coverage gate (>= 60%)
+        working-directory: proyecto_i
         run: |
-          pytest -q \
+          python -m pytest -q \
             --cov=ventas_app \
             --cov-report=term-missing \
             --cov-fail-under=60
