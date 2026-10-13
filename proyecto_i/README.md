@@ -166,17 +166,17 @@ La aplicación carga el CSV, valida los registros según reglas de negocio propi
 
 Se comprueba que:
 
-Los identificadores y books_count sean enteros positivos.
+    Los identificadores y books_count sean enteros positivos.
 
-average_rating esté entre 0 y 5, ambos incluidos.
+    average_rating esté entre 0 y 5, ambos incluidos.
 
-ratings_count sea un entero no negativo.
+    ratings_count sea un entero no negativo.
 
-authors y title no sean nulos ni estén vacíos.
+    authors y title no sean nulos ni estén vacíos.
 
-Estén presentes todas las columnas obligatorias.
+    Estén presentes todas las columnas obligatorias.
 
-El campo isbn puede ser nulo.
+    El campo isbn puede ser nulo.
 
 ### Métricas
 
