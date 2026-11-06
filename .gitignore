@@ -27,3 +27,7 @@ build/
 .idea/
 .vscode/
 *.swp
+
+# archivos csv de mi proyecto
+proyecto_i/data/books.csv
+proyecto_i/data/books_clean.csv
