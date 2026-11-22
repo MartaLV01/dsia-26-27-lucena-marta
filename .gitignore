@@ -31,3 +31,17 @@ build/
 # archivos csv de mi proyecto
 proyecto_i/data/books.csv
 proyecto_i/data/books_clean.csv
+
+# Proyecto II - datos originales
+proyecto_ii/data/raw/*
+!proyecto_ii/data/raw/README.md
+
+# Proyecto II - datos procesados
+proyecto_ii/data/processed/*
+!proyecto_ii/data/processed/README.md
+
+# Proyecto II - modelos y archivos generados
+proyecto_ii/artifacts/
+
+# Log antiguo con rutas absolutas
+proyecto_ii/logs/pipeline.log
