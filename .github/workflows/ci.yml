@@ -1,9 +1,10 @@
-# Plantilla CI Proyecto I — copiar a .github/workflows/ci.yml
-name: proyecto-i-ci
+# Mi plantilla para DSIA
+# .github/workflows/ci.yml
+name: dsia-ci
 
 on:
   push:
-    branches: [main, proyecto1]
+    branches: [main, proyecto1, proyecto2]
   pull_request:
 
 jobs:
@@ -29,5 +30,13 @@ jobs:
           python -m pytest -q \
             --cov=ventas_app \
             --cov=books_app \
+            --cov-report=term-missing \
+            --cov-fail-under=60
+      
+      - name: Tests Proyecto II + cobertura (>= 60%)
+        working-directory: proyecto_ii
+        run: |
+          python -m pytest -q \
+            --cov=book_recommender \
             --cov-report=term-missing \
             --cov-fail-under=60
