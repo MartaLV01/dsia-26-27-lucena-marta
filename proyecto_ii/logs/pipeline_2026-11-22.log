@@ -1,0 +1,106 @@
+2026-11-22 21:56:23 | INFO | book_recommender.pipeline | Iniciando pipeline: data_dir=data\raw, output_path=data\processed\books_master.csv
+2026-11-22 21:56:23 | INFO | book_recommender.pipeline | Etapa 1/7: carga de datos
+2026-11-22 21:56:23 | INFO | book_recommender.loader | Iniciando carga de datos desde data\raw
+2026-11-22 21:56:23 | INFO | book_recommender.loader | Archivo cargado: name=books, rows=10000
+2026-11-22 21:56:24 | INFO | book_recommender.loader | Archivo cargado: name=ratings, rows=5976479
+2026-11-22 21:56:24 | INFO | book_recommender.loader | Archivo cargado: name=book_tags, rows=999912
+2026-11-22 21:56:24 | INFO | book_recommender.loader | Archivo cargado: name=tags, rows=34252
+2026-11-22 21:56:25 | INFO | book_recommender.loader | Archivo cargado: name=to_read, rows=912705
+2026-11-22 21:56:25 | INFO | book_recommender.loader | Carga completada: files=5
+2026-11-22 21:56:25 | INFO | book_recommender.pipeline | Etapa 2/7: validación de datos
+2026-11-22 21:56:25 | INFO | book_recommender.validator | Iniciando validación de datasets: datasets=5
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Dataset validado: name=books, valid=10000, invalid=0
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Dataset validado: name=ratings, valid=5976479, invalid=0
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Dataset validado: name=book_tags, valid=999759, invalid=153
+2026-11-22 21:56:28 | WARNING | book_recommender.validator | Se han encontrado filas inválidas: dataset=book_tags, count=153
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Dataset validado: name=tags, valid=34235, invalid=17
+2026-11-22 21:56:28 | WARNING | book_recommender.validator | Se han encontrado filas inválidas: dataset=tags, count=17
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Dataset validado: name=to_read, valid=912705, invalid=0
+2026-11-22 21:56:28 | INFO | book_recommender.validator | Validación completada correctamente: datasets=5
+2026-11-22 21:56:28 | WARNING | book_recommender.pipeline | Se han descartado registros inválidos: dataset=book_tags, count=153
+2026-11-22 21:56:28 | WARNING | book_recommender.pipeline | Se han descartado registros inválidos: dataset=tags, count=17
+2026-11-22 21:56:28 | INFO | book_recommender.pipeline | Etapa 3/7: construcción del dataset maestro
+2026-11-22 21:56:28 | INFO | book_recommender.dataset_builder | Iniciando construcción del dataset maestro
+2026-11-22 21:56:28 | INFO | book_recommender.dataset_builder | Datos de entrada: books=10000, book_tags=999759, tags=34235
+2026-11-22 21:56:28 | INFO | book_recommender.tag_filter | Iniciando análisis de etiquetas: tags=34235
+2026-11-22 21:56:28 | INFO | book_recommender.tag_filter | Análisis terminado: thematic=1083, non_thematic=456, uncertain=32696
+2026-11-22 21:56:28 | INFO | book_recommender.dataset_builder | Dataset maestro construido: books=10000, columns=15, books_with_tags=10000
+2026-11-22 21:56:28 | INFO | book_recommender.pipeline | Etapa 4/7: guardado del dataset maestro
+2026-11-22 21:56:28 | INFO | book_recommender.dataset_builder | Iniciando guardado del dataset maestro: path=data\processed\books_master.csv, rows=10000
+2026-11-22 21:56:28 | INFO | book_recommender.dataset_builder | Dataset maestro guardado correctamente: path=data\processed\books_master.csv, rows=10000
+2026-11-22 21:56:28 | INFO | book_recommender.pipeline | Etapa 5/7: cálculo de métricas
+2026-11-22 21:56:28 | INFO | book_recommender.pipeline | Métricas calculadas: total_books=10000, average_rating=4.0022, most_rated_book=The Hunger Games (The Hunger Games, #1)
+2026-11-22 21:56:28 | INFO | book_recommender.pipeline | Etapa 6/7: entrenamiento del recomendador
+2026-11-22 21:56:28 | INFO | book_recommender.model_training | Iniciando entrenamiento del modelo.
+2026-11-22 21:56:28 | INFO | book_recommender.features | Preparando características textuales: books=10000
+2026-11-22 21:56:29 | INFO | book_recommender.features | Características textuales preparadas: books=10000
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Entrenando recomendador: books=10000
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendador entrenado: books=10000, features=176
+2026-11-22 21:56:29 | INFO | book_recommender.model_training | Modelo guardado correctamente: path=artifacts\book_recommender.joblib
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Etapa 7/7: evaluación del recomendador
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.recommender | Recomendaciones generadas: requested=5, returned=5
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Resultados de evaluación guardados en: data\processed\evaluation_results_2026-11-22.json
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Evaluación (book_queries): solicitadas=20, completadas=20, fallidas=0, similitud_media=0.9715592854017341, diversidad=0.025969910573160993, cobertura=0.01
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Evaluación (tag_queries): solicitadas=20, completadas=20, fallidas=0, similitud_media=0.7331340409389084, diversidad=0.1583112940089991, cobertura=0.01
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Evaluación (combined_queries): solicitadas=20, completadas=20, fallidas=0, similitud_media=0.7373706504017146, diversidad=0.13218121338875288, cobertura=0.01
+2026-11-22 21:56:29 | INFO | book_recommender.pipeline | Pipeline completado correctamente: books=10000, duration=6.02 segundos
+2026-11-22 21:56:29 | INFO | __main__ | Ejecución del CLI finalizada correctamente.
