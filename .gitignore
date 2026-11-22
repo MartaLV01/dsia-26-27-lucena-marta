@@ -39,6 +39,7 @@ proyecto_ii/data/raw/*
 # Proyecto II - datos procesados
 proyecto_ii/data/processed/*
 !proyecto_ii/data/processed/README.md
+!proyecto_ii/data/processed/evaluation_results_*.json
 
 # Proyecto II - modelos y archivos generados
 proyecto_ii/artifacts/
