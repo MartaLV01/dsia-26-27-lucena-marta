@@ -42,7 +42,8 @@ proyecto_ii/data/processed/*
 !proyecto_ii/data/processed/evaluation_results_*.json
 
 # Proyecto II - modelos y archivos generados
-proyecto_ii/artifacts/
+proyecto_ii/artifacts/*
+!proyecto_ii/artifacts/README.md
 
 # Log antiguo con rutas absolutas
 proyecto_ii/logs/pipeline.log

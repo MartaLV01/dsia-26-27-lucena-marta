@@ -1,33 +1,42 @@
-# Carpeta de apoyo
+# Carpeta de apoyo / Scripts de comprobación manual
 
 Los archivos contenidos en esta carpeta son usados para ver que las files principales funcionan correctamente.
 
+Esta carpeta contiene scripts auxiliares utilizados durante el desarrollo para comprobar el funcionamiento de distintos módulos del proyecto.
+
+Estos scripts permiten realizar comprobaciones manuales y no sustituyen a los tests automatizados de la carpeta `tests/`.
+
 ## `check_loader.py`
-Comprueba que los archivos de `data/` se leen correctamente con el `loader.load_data()`
+Comprueba que los archivos CSV originales se cargan correctamente mediante la función `load_data()` del módulo `book_recommender.loader`.
+
+Requiere disponer de los archivos originales en `data/raw/`.
 
 ## `check_recommender.py`
-Primero hay que ejecutar el proeycto para poder obtener un .joblib
-
 Permite comprobar los tres modos de recomendación utilizando un modelo ya entrenado.
 
-Hay que cambiar la direccion del modelo .joblib dependiendo que que modelo sea el que se quiera probar
-Se crea un modelo nuevo con:
-       `python -m book_recommender.cli --model-output artifacts/book_recommender_tags_test.joblib`
-En funcion de la ruta indicada se debe modificar esta otra ruta:
-    `model_path = Path("artifacts/book_recommender_tags_test.joblib")`
+Antes de ejecutarlo, es necesario generar un modelo mediante el pipeline. Por ejemplo:
+
+`python -m book_recommender.cli --model-output artifacts/book_recommender_tags_test.joblib`
+
+La ruta del modelo debe coincidir con la indicada en la variable model_path del script.
 
 ## `inspect_tags.py`
-El archivo `inspect_tags.py` se ha usado para ver que tags son los mas usados, categorias, mas frecuentes presentes en `tags.csv`teniendo en cuenta a que libro/s pertenece definido en `book_tags.csv`.
+Permite inspeccionar las etiquetas del dataset y analizar su clasificación temática.
 
-Esta viendo el rendimiento de `book_recommender/tag_filter.py` en funcion de las tags que ha ido imprimeirndo por consola he ido modificando las constantes: `THEMATIC_TAGS`, `NON_THEMATIC_PATTERNS`, `TAG_ALIASES`
+El archivo `inspect_tags.py` se ha usado para ver que tags son los mas usados y las categorias mas frecuentes presentes en `tags.csv` teniendo en cuenta a que libro/s pertenece definido en `book_tags.csv`.
 
-Cada vez que se ejecuta se sobreescribe el archivo de salida:
-    `output_path = Path("data/processed/tag_report.csv")`
+Se ha utilizado durante el desarrollo para revisar y ajustar las constantes del módulo `book_recommender/tag_filter.py`:
+- THEMATIC_TAGS
+- NON_THEMATIC_PATTERNS
+- TAG_ALIASES
 
+El script genera un informe CSV en: `data/processed/tag_report.csv`
+
+Cada vez que se ejecuta se sobreescribe el archivo.
 
 ## Ejecutarlo
 
-Desde `~/dsia-26-27-lucena-marta/proyecto_ii` ejecutar las files
+Desde el directorio `proyecto_ii` ejecutar:
 
 * `python -m scripts_pruebas.check_loader`
 * `python -m scripts_pruebas.check_recommender`
