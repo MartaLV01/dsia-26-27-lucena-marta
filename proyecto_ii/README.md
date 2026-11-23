@@ -36,12 +36,13 @@ El pipeline se organiza en las siguientes fases:
 ### Reglas de validación
 
 Durante la validación de los datos se comprueba, entre otros aspectos, que:
-    - Los identificadores y books_count sean enteros positivos.
-    - average_rating esté entre 0 y 5, ambos incluidos.
-    - ratings_count sea un entero no negativo.
-    - authors y title no sean nulos ni estén vacíos.
-    - Estén presentes todas las columnas obligatorias.
-    - El campo isbn puede ser nulo.
+- Los identificadores y books_count sean enteros positivos.
+- average_rating esté entre 0 y 5, ambos incluidos.
+- ratings_count sea un entero no negativo.
+- authors y title no sean nulos ni estén vacíos.
+- Estén presentes todas las columnas obligatorias.
+- El campo isbn puede ser nulo.
+- No hay duplicados.
 
 También se realizan comprobaciones adicionales de integridad y consistencia entre los distintos conjuntos de datos.
 
@@ -97,9 +98,9 @@ Estas métricas permiten estudiar el comportamiento del sistema, aunque no demue
 **Proceso de evaluación**
 
 La evaluación genera consultas reproducibles para los tres modos de recomendación:
-    - 20 consultas por identificadores de libros.
-    - 20 consultas por etiquetas.
-    - 20 consultas combinadas.
+- 20 consultas por identificadores de libros.
+- 20 consultas por etiquetas.
+- 20 consultas combinadas.
 
 Se utiliza una semilla fija (random_state=42) para facilitar la reproducibilidad.
 
