@@ -1,0 +1,49 @@
+# Entornos
+.venv/
+venv/
+env/
+Envs/
+
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.coverage
+htmlcov/
+dist/
+build/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# archivos csv de mi proyecto
+proyecto_i/data/books.csv
+proyecto_i/data/books_clean.csv
+
+# Proyecto II - datos originales
+proyecto_ii/data/raw/*
+!proyecto_ii/data/raw/README.md
+
+# Proyecto II - datos procesados
+proyecto_ii/data/processed/*
+!proyecto_ii/data/processed/README.md
+!proyecto_ii/data/processed/evaluation_results_*.json
+
+# Proyecto II - modelos y archivos generados
+proyecto_ii/artifacts/*
+!proyecto_ii/artifacts/README.md
+
+# Log antiguo con rutas absolutas
+proyecto_ii/logs/pipeline.log

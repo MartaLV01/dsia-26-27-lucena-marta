@@ -1,0 +1,29 @@
+{
+    "book_queries": {
+        "queries_requested": 20,
+        "queries_succeeded": 20,
+        "queries_failed": 0,
+        "average_similarity": 0.9715592854017341,
+        "intra_list_diversity": 0.025969910573160993,
+        "catalog_coverage": 0.01,
+        "errors": []
+    },
+    "tag_queries": {
+        "queries_requested": 20,
+        "queries_succeeded": 20,
+        "queries_failed": 0,
+        "average_similarity": 0.7331340409389084,
+        "intra_list_diversity": 0.1583112940089991,
+        "catalog_coverage": 0.01,
+        "errors": []
+    },
+    "combined_queries": {
+        "queries_requested": 20,
+        "queries_succeeded": 20,
+        "queries_failed": 0,
+        "average_similarity": 0.7373706504017146,
+        "intra_list_diversity": 0.13218121338875288,
+        "catalog_coverage": 0.01,
+        "errors": []
+    }
+}
